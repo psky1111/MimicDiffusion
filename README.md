@@ -1,2 +1,2 @@
 # MimicDiffusion
-Offical implement for MimicDiffusion with Pytorch
+Official implement for MimicDiffusion with Pytorch
