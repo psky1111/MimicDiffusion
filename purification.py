@@ -175,9 +175,9 @@ class PurificationForward_mimic(torch.nn.Module):
             c2 = ((1 - at_next) - c1 ** 2).sqrt()
 
             #two guidance
-            
             guidances = 0.
-            if 100 > count:
+            # freedom strategy
+            if 90>count>20:
                 xt.requires_grad_()
                 with torch.enable_grad():
                     x0_t = (xt - et * (1 - at).sqrt()) / at.sqrt()
@@ -189,7 +189,6 @@ class PurificationForward_mimic(torch.nn.Module):
                 
 
                 print(f"the norm is {measure_norm.item()}")
-
                 rho_norm = rho_scale * at.sqrt()
                 rho_super =  rho_scale * at.sqrt()
                 
